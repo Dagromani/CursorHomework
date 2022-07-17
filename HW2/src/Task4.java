@@ -9,8 +9,9 @@ public class Task4 {
             int randInt = r.nextInt(100);
             array[i] = randInt;
         }
+        //int[] array = {-2,-1,-53,-22,-67, -77,-535, -234, -99, -35};
 
-        int maxNumber = 0;
+        int maxNumber = array[0];
 
         for (int x = 0; x < 10 ; x++){
             if (array[x] > maxNumber) {
