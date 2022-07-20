@@ -5,17 +5,13 @@ public class Task3 {
         char[] array = new char[10];
         Random r = new Random();
 
-        for (int i = 0; i < 10 ; i++) {
-            char randChar = (char)(r.nextInt(26) + 'a');
+        for (int i = 0; i < 10; i++) {
+            char randChar = (char) (r.nextInt(26) + 'a');
             array[i] = randChar;
+            System.out.println(array[i]);
 
 
         }
-
-        for (char x : array) {
-              System.out.println(x);
-        }
-
 
 
     }
