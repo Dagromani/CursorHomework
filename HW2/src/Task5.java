@@ -5,7 +5,7 @@ public class Task5 {
         int[] array = new int[10];
         Random r = new Random();
 
-        for (int i = 0 ; i < 10 ; i++) {
+        for (int i = 0; i < 10; i++) {
             int randInt = r.nextInt(100);
             array[i] = randInt;
         }
@@ -13,9 +13,9 @@ public class Task5 {
 
         int minNumber = array[0];
 
-        for (int x = 0; x < 10 ; x++){
+        for (int x = 0; x < 10; x++) {
             if (array[x] < minNumber) {
-                minNumber = array[x] ;
+                minNumber = array[x];
             }
         }
 
@@ -23,7 +23,7 @@ public class Task5 {
             System.out.println(y);
         }
 
-        System.out.println("Минимальное число : " + minNumber);
+        System.out.println("Min number : " + minNumber);
     }
 
 }
