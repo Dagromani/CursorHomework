@@ -5,7 +5,7 @@ public class Task6 {
         int[] array = new int[10];
         Random randInt = new Random();
 
-        for (int i = 0 ; i < 10 ; i++) {
+        for (int i = 0; i < 10; i++) {
             int randNumber = randInt.nextInt(100);
             array[i] = randNumber;
         }
@@ -18,7 +18,7 @@ public class Task6 {
 
         }
 
-        int average = sum / array.length ;
+        int average = sum / array.length;
         System.out.println("Average : " + average);
 
 
