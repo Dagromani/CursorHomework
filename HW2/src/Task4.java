@@ -5,25 +5,22 @@ public class Task4 {
         int[] array = new int[10];
         Random r = new Random();
 
-        for (int i =0 ; i < 10 ; i++) {
+        for (int i = 0; i < 10; i++) {
             int randInt = r.nextInt(100);
             array[i] = randInt;
         }
-        //int[] array = {-2,-1,-53,-22,-67, -77,-535, -234, -99, -35};
 
-        int maxNumber = array[0];
+        int maxNumber = Integer.MIN_VALUE;
 
-        for (int x = 0; x < 10 ; x++){
+        for (int x = 0; x < 10; x++) {
             if (array[x] > maxNumber) {
-                maxNumber = array[x] ;
+                maxNumber = array[x];
             }
+            System.out.println(array[x]);
         }
 
-        for (int y : array) {
-            System.out.println(y);
-        }
 
-        System.out.println("Максимальное число : " + maxNumber);
+        System.out.println("Max number : " + maxNumber);
 
     }
 }
