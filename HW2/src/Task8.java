@@ -5,13 +5,13 @@ public class Task8 {
         int[] array = new int[10];
         Random randInt = new Random();
 
-        for (int i = 0 ; i < 10 ; i++) {
+        for (int i = 0; i < 10; i++) {
             int randNumber = randInt.nextInt(100);
             array[i] = randNumber;
         }
 
-        for (int x = 0 ; x < 10 ; x++ ) {
-            if (x % 2 ==0) {
+        for (int x = 0; x < 10; x++) {
+            if (x % 2 == 0) {
                 System.out.println(array[x]);
             }
 
