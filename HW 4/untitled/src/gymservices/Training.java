@@ -1,33 +1,31 @@
 package gymservices;
 
-public class Training extends Service {
-
+public abstract class Training extends Service implements Difficultyable {
     private int duration;
-
+    private String difficulty;
+    protected Training(int price , String name , String difficulty) {
+        super(price,name);
+        this.difficulty = difficulty;
+    }
     public void setDuration(int duration) {
         this.duration = duration;
     }
-
-    public Training(int price) {
-        super(price);
-    }
-
     @Override
     public int getPrice() {
         return super.getPrice();
     }
-
+    public String getName() {
+        return super.getName();
+    }
     public int getDuration() {
         return duration;
     }
-
     @Override
     public String toString() {
-        return "Training{" +
-                "duration=" + duration +
-                '}';
+        return super.toString();
     }
-
-
-
+    @Override
+    public String getDifficulty() {
+        return difficulty;
+    }
 }
