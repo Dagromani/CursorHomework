@@ -1,7 +1,5 @@
 package Task1;
 
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
         MyList list = new MyList<>();
@@ -14,7 +12,6 @@ public class Main {
         for (int i = 0 ; i < list.arrayList.size() ; i++) {
             System.out.println(list.arrayList.get(i));
         }
-
         System.out.println("Max number: " + list.largest());
         System.out.println("Min number: " + list.smallest());
     }
