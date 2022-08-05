@@ -5,13 +5,10 @@ import java.util.List;
 
 public class MyList<T extends Comparable<T>> {
 
-    public MyList() {
-    }
-
     public List<T> arrayList = new ArrayList<>();
 
     public void add(T parameter) {
-        arrayList.add(0, parameter);
+        arrayList.add(parameter);
     }
 
     public T largest() {
