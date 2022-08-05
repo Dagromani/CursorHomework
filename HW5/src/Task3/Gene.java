@@ -3,34 +3,31 @@ package Task3;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Gene <T>  {
+public class Gene<T extends Comparable<T>> {
 
     public ArrayList<T> array;
 
     public Gene(ArrayList<T> array) {
-
         this.array = array;
-
     }
 
-    public int highest() {
-        int maxNumber = (int) array.get(0);
+    public T highest() {
+        T maxNumber = array.get(0);
         for (int i = 0; i < array.size(); i++) {
-            if (maxNumber < (int) array.get(i)) {
-                maxNumber = (int) array.get(i);
+            if (maxNumber.compareTo(array.get(i)) < 0) {
+                maxNumber = array.get(i);
             }
         }
         return maxNumber;
     }
 
-    public int lowest() {
-        int minNumber = (int) array.get(0);
+    public T lowest() {
+        T minNumber = array.get(0);
         for (int i = 0; i < array.size(); i++) {
-            if (minNumber > (int) array.get(i)) {
-                minNumber = (int) array.get(i);
+            if (minNumber.compareTo(array.get(i)) > 0) {
+                minNumber = array.get(i);
             }
         }
         return minNumber;
     }
-
 }
