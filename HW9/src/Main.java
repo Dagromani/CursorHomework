@@ -12,7 +12,7 @@ public class Main {
         System.out.println("");
 
         //Task2
-        Task2 string = ((s0, s1, s2, s3, s4, s5, s6) -> System.out.println(s0 + s1 + s2 + s3 + s4 + s5 + s6));
+        Task2 string = ((s0, s1, s2, s3, s4, s5, s6) -> System.out.println((s0 + s1 + s2 + s3 + s4 + s5 + s6).toUpperCase()));
         string.stringUnion("hello " , "my name " , "is " , "niko " , "i " , "like " , "books");
         System.out.println("");
 
