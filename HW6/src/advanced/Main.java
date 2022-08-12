@@ -12,11 +12,9 @@ public class Main {
 //        example.add("fsd");
 //        example.add("iii");
 //        example.add("ggg");
-//
 //        example.getElement(0);
 //        example.getElement(3);
 //        example.getElement(4);
-
 
 //        CustomStack stack = new CustomStack();
 //        stack.push(6);
@@ -74,18 +72,5 @@ public class Main {
 //        example.dequeue();
 //        example.dequeue();
 //        example.printList();
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }
