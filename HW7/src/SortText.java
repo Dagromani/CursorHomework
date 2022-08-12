@@ -22,8 +22,7 @@ public class SortText {
         int count = 0;
         BufferedReader reader = new BufferedReader(new FileReader("D://Java//VoinaIMir.txt", Charset.forName("UTF-8")));
         while ((currentLine = reader.readLine()) != null) {
-            List<String> textLine = new ArrayList<String>(Arrays.asList(currentLine.split("[^абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ]")));
-
+            List<String> textLine = new ArrayList<String>(Arrays.asList(currentLine.split("[^a-zA-Zа-яА-Я]")));
             for (String string : textLine) {
                 if (string.length() > wordLength) {
                     wordLength = string.length();
@@ -34,7 +33,7 @@ public class SortText {
         List<String> listOfLongest = new ArrayList<String>();
         BufferedReader reader2 = new BufferedReader(new FileReader("D://Java//VoinaIMir.txt", Charset.forName("UTF-8")));
         while ((currentLine = reader2.readLine()) != null) {
-            List<String> textLine = new ArrayList<String>(Arrays.asList(currentLine.split("[^абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ]")));
+            List<String> textLine = new ArrayList<String>(Arrays.asList(currentLine.split("[^a-zA-Zа-яА-Я]")));
 
             for (String string : textLine) {
                 if (string.length() == longest.length()) {
@@ -53,32 +52,35 @@ public class SortText {
         String shortest = "";
         int wordLength = 3;
         int count = 0;
+        List<String> listOfShortest = new ArrayList<String>();
         BufferedReader reader = new BufferedReader(new FileReader("D://Java//VoinaIMir.txt", Charset.forName("UTF-8")));
         while ((currentLine = reader.readLine()) != null) {
-            List<String> textLine = new ArrayList<String>(Arrays.asList(currentLine.split("[^абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ]")));
-
+            List<String> textLine = new ArrayList<String>(Arrays.asList(currentLine.split("[^a-zA-Zа-яА-Я]")));
             for (String string : textLine) {
                 if (string.length() >= 1 && string.length() <= wordLength) {
                     wordLength = string.length();
                     shortest = string;
-                }
-            }
-        }
-        List<String> listOfShortest = new ArrayList<String>();
-        BufferedReader reader2 = new BufferedReader(new FileReader("D://Java//VoinaIMir.txt", Charset.forName("UTF-8")));
-        while ((currentLine = reader2.readLine()) != null) {
-            List<String> textLine = new ArrayList<String>(Arrays.asList(currentLine.split("[^абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ]")));
+                    if (string.length() == shortest.length()) {
+                        listOfShortest.add(string);
+                    }
 
-            for (String string : textLine) {
-                if (string.length() == shortest.length()) {
-                    listOfShortest.add(string);
-                    count++;
                 }
             }
         }
         Collator collator = Collator.getInstance(new Locale("ru", "RU"));
         Collections.sort(listOfShortest, collator);
-        System.out.println("Cамое короткое слово: " + listOfShortest.get(0) + ". Повторяется " + count + " раз.");
+        List<String> finalList = new ArrayList<String>();
+        BufferedReader reader2 = new BufferedReader(new FileReader("D://Java//VoinaIMir.txt", Charset.forName("UTF-8")));
+        while ((currentLine = reader2.readLine()) != null) {
+            List<String> textLine = new ArrayList<String>(Arrays.asList(currentLine.split("[^a-zA-Zа-яА-Я]")));
+            for (String string : textLine) {
+                if (string.equalsIgnoreCase(listOfShortest.get(0))) {
+                    finalList.add(string);
+                    count++;
+                }
+            }
+        }
+        System.out.println("Cамое короткое слово: " + finalList.get(0) + ". Повторяется " + count + " раз.");
     }
 }
 
