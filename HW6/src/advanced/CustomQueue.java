@@ -7,6 +7,7 @@ public class CustomQueue extends CustomLinkedList{
     }
 
     public void dequeue() {
+        System.out.println(getFirst());
         super.removeFirst();
     }
 
