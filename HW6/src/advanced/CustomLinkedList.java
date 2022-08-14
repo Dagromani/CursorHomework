@@ -5,7 +5,7 @@ public class CustomLinkedList<T> {
     private int size;
     private Node head;
     private Node tail;
-    private int j = 3;
+    private int j = 1;
 
     private class Node {
         Node next;
@@ -38,7 +38,7 @@ public class CustomLinkedList<T> {
     }
 
     public void add(int index, T ele) {
-        if (index >= size - 1 || index < 0) {
+        if (index < 0) {
             System.out.println("There is no element on such index");
         } else if (index == 0) {
             addFirst(ele);
@@ -73,21 +73,8 @@ public class CustomLinkedList<T> {
         if (head == null) {
             Node node = new Node(ele);
             head = node;
+            tail = head;
             node.i = 0;
-        } else if (tail == null) {
-            Node node = new Node(ele);
-            head.next = node;
-            tail = node;
-            tail.prev = head;
-            node.i = 1;
-        } else if (head.next == tail) {
-            Node node = new Node(ele);
-            head.next = tail;
-            tail.prev = tail;
-            tail.next = node;
-            tail = node;
-            node.i = 2;
-
         } else {
             Node node = new Node(ele);
             tail.prev = tail;
@@ -103,6 +90,7 @@ public class CustomLinkedList<T> {
         if (head == null) {
             Node node = new Node(ele);
             head = node;
+            tail = head;
             node.i = 0;
         } else if (tail == null) {
             Node node = new Node(ele);
@@ -110,7 +98,6 @@ public class CustomLinkedList<T> {
             node.next = head;
             head.i = 1;
             node.i = 0;
-            tail = head;
             head = node;
         } else {
             Node node = new Node(ele);
@@ -152,6 +139,7 @@ public class CustomLinkedList<T> {
             current = current.next;
         }
     }
+
 
     public void getElement(int index) {
         Node current = head;
