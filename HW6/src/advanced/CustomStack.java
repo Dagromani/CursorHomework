@@ -7,6 +7,7 @@ public class CustomStack<T> extends CustomSinglyLinkedList<T> {
     }
 
     public void pop() {
+        System.out.println(super.getLast());
         super.removeTail();
     }
 
