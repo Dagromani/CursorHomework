@@ -58,8 +58,10 @@ public class Task1to13 {
         System.out.println("");
 
         //Task9
-        linkedList.add(5 , 44);
-        linkedList.add(5 , 33);
+        LinkedList<Integer> coll = new LinkedList<>();
+        coll.add(44);
+        coll.add(55);
+        linkedList.addAll(5 , coll);
         System.out.println(linkedList);
         System.out.println("");
 
@@ -76,11 +78,8 @@ public class Task1to13 {
         System.out.println("");
 
         //Task12
-        for (int i = 0 ; i < linkedList.size() ; i++) {
-            if (linkedList.get(i) == 13) {
-                linkedList.remove(i);
-            }
-        }
+        int specEle = 13;
+        linkedList.remove(linkedList.indexOf(specEle));
         System.out.println(linkedList);
         System.out.println("");
 
