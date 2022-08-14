@@ -5,7 +5,7 @@ public class CustomSinglyLinkedList <T> {
     private int size;
     private Node head;
     private Node tail;
-    private int j = 2;
+    private int j = 1;
 
     private class Node {
         Node next;
@@ -27,6 +27,7 @@ public class CustomSinglyLinkedList <T> {
         if (head == null) {
             Node node = new Node(element);
             head = node;
+            tail = node;
             node.i = 0;
         } else if (tail == null){
             Node node = new Node(element);
@@ -80,7 +81,7 @@ public class CustomSinglyLinkedList <T> {
     public void printList() {
         Node current = head;
         while(current != null) {
-            System.out.println(current.getNode());
+            System.out.println(current.getNode() + "{" + current.i + "}");
             current = current.next;
         }
     }
@@ -92,5 +93,4 @@ public class CustomSinglyLinkedList <T> {
             return false;
         }
     }
-
 }
