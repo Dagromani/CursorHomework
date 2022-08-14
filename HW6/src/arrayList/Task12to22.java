@@ -67,8 +67,8 @@ public class Task12to22 {
         System.out.println("");
 
         //Task22
-        for (Object object :arrayList){
-            System.out.println(object);
+        for (int i = 0 ; i < arrayList.size() ; i++){
+            System.out.println(arrayList.get(i));
         }
         System.out.println("");
     }
