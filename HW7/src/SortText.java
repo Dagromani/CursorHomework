@@ -11,9 +11,10 @@ public class SortText {
     String currentLine;
 
     public void readFile() throws IOException {
-        File file = new File("VoinaIMir.txt");
-        System.out.println(file.getCanonicalPath());
-        BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\Admin\\IdeaProjects\\HW7\\src\\VoinaIMir.txt", Charset.forName("UTF-8")));
+//        File file = new File("VoinaIMir.txt");
+//        System.out.println(file.getCanonicalPath());
+        String filePath = "HW7/src/VoinaIMir.txt";
+        BufferedReader reader = new BufferedReader(new FileReader(filePath, Charset.forName("UTF-8")));
         while ((currentLine = reader.readLine()) != null) {
             System.out.println(currentLine);
         }
