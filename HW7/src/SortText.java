@@ -9,15 +9,16 @@ import java.util.*;
 public class SortText {
 
     String currentLine;
+    String filePath = "HW7/src/VoinaIMir.txt";
 
     public void readFile() throws IOException {
 //        File file = new File("VoinaIMir.txt");
 //        System.out.println(file.getCanonicalPath());
-        String filePath = "HW7/src/VoinaIMir.txt";
         BufferedReader reader = new BufferedReader(new FileReader(filePath, Charset.forName("UTF-8")));
         while ((currentLine = reader.readLine()) != null) {
             System.out.println(currentLine);
         }
+        reader.close();
     }
 
     public void longestAndShortestWord() throws IOException {
@@ -27,13 +28,14 @@ public class SortText {
         int wordLengthMax = 5;
         List<String> words = new ArrayList<>();
         HashMap<String , Integer> allWords = new HashMap<>();
-        BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\Admin\\IdeaProjects\\HW7\\src\\VoinaIMir.txt", Charset.forName("UTF-8")));
+        BufferedReader reader = new BufferedReader(new FileReader(filePath, Charset.forName("UTF-8")));
         while ((currentLine = reader.readLine()) != null) {
             List<String> textLine = new ArrayList<String>(Arrays.asList(currentLine.split("[^a-zA-Zа-яА-Я]")));
             for (int i = 0 ; i < textLine.size() ; i++) {
                 words.add(textLine.get(i));
             }
         }
+        reader.close();
         for (int i = 0 ; i < words.size() ; i++) {
             if (words.get(i).length() != 0) {
                 if(!allWords.containsKey(words.get(i))) {
